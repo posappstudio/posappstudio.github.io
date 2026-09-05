@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Po AppStudio</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f4fbf8, #eef4ff);
+      color: #263238;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 760px;
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 38px;
+      font-weight: 700;
+      color: #2f6f62;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #607d78;
+      margin-bottom: 36px;
+    }
+
+    .app-card {
+      background: white;
+      border-radius: 22px;
+      padding: 30px;
+      box-shadow: 0 12px 35px rgba(47, 111, 98, 0.12);
+    }
+
+    .app-icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      border-radius: 20px;
+      background: #dff3ec;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 27px;
+    }
+
+    .description {
+      line-height: 1.6;
+      color: #60706d;
+      max-width: 570px;
+      margin: 0 auto 24px;
+    }
+
+    .links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    a {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 600;
+      color: white;
+      background: #2f806f;
+    }
+
+    a.secondary {
+      color: #2f6f62;
+      background: #e6f4ef;
+    }
+
+    footer {
+      margin-top: 30px;
+      color: #71817e;
+      font-size: 14px;
+    }
+
+    footer a {
+      padding: 0;
+      color: #2f6f62;
+      background: none;
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <div class="brand">Po AppStudio</div>
+    <div class="subtitle">Sade, kullanışlı ve günlük hayata dokunan uygulamalar.</div>
+
+    <section class="app-card">
+      <div class="app-icon">🏡</div>
+      <h1>YuvamApp</h1>
+
+      <p class="description">
+        Ev işleri, günlük görevler ve namaz takibini tek yerde,
+        anlaşılır ve huzurlu bir deneyimle sunan günlük takip uygulaması.
+      </p>
+
+      <div class="links">
+        <a href="https://play.google.com/store/apps/details?id=com.posappstudio.yuvamapp">
+          Google Play
+        </a>
+
+        <a class="secondary" href="https://posappstudio.github.io/yuvam-privacy/">
+          Gizlilik Politikası
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      İletişim:
+      <a href="mailto:posappstudio@gmail.com">posappstudio@gmail.com</a>
+      <br><br>
+      © 2026 Po AppStudio
+    </footer>
+  </main>
+</body>
+</html>
