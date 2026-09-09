@@ -3,12 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Po's AppStudio: YuvamApp ile günlük hayatını düzenle, LexiFort: Kelime Köyü ile kelimelerden kendi köyünü kur.">
   <title>Po's AppStudio</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       min-height: 100vh;
@@ -18,123 +16,100 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 24px;
+      padding: 48px 24px;
     }
-
-    .container {
-      width: 100%;
-      max-width: 760px;
-      text-align: center;
-    }
-
-    .brand {
-      font-size: 38px;
-      font-weight: 700;
-      color: #2f6f62;
-      margin-bottom: 8px;
-    }
-
-    .subtitle {
-      color: #607d78;
-      margin-bottom: 36px;
-    }
-
+    .container { width: 100%; max-width: 1000px; text-align: center; }
+    .brand { font-size: 38px; font-weight: 700; color: #2f6f62; margin: 0 0 8px; }
+    .subtitle { color: #526d68; line-height: 1.6; margin: 0 0 36px; }
+    .apps { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
     .app-card {
       background: white;
       border-radius: 22px;
-      padding: 30px;
+      padding: 32px 28px;
       box-shadow: 0 12px 35px rgba(47, 111, 98, 0.12);
-    }
-
-    .app-icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 18px;
-      border-radius: 20px;
-      background: #dff3ec;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      border: 1px solid #e3eee9;
+      min-width: 0;
+    }
+    .app-icon {
+      width: 72px; height: 72px; margin: 0 auto 18px;
+      border-radius: 20px; background: #dff3ec;
+      display: flex; align-items: center; justify-content: center;
       font-size: 36px;
     }
-
-    h1 {
-      margin: 0 0 12px;
-      font-size: 27px;
+    h2 { margin: 0 0 10px; font-size: 27px; }
+    .app-tagline { margin: 0 0 18px; color: #526d68; font-size: 14px; font-weight: 600; line-height: 1.5; }
+    .description { line-height: 1.7; color: #52635f; margin: 0 0 26px; }
+    .links { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: auto; }
+    .button, .coming-soon {
+      display: inline-block; padding: 12px 18px; border-radius: 12px;
+      font-size: 14px; line-height: 1.5; font-weight: 600;
     }
-
-    .description {
-      line-height: 1.6;
-      color: #60706d;
-      max-width: 570px;
-      margin: 0 auto 24px;
-    }
-
-    .links {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    a {
-      display: inline-block;
-      padding: 12px 19px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: 600;
-      color: white;
-      background: #2f806f;
-    }
-
-    a.secondary {
-      color: #2f6f62;
-      background: #e6f4ef;
-    }
-
-    footer {
-      margin-top: 30px;
-      color: #71817e;
-      font-size: 14px;
-    }
-
-    footer a {
-      padding: 0;
-      color: #2f6f62;
-      background: none;
+    .button { text-decoration: none; color: white; background: #2f806f; }
+    .button:hover { background: #256858; }
+    .button.secondary { color: #2f6f62; background: #e6f4ef; }
+    .button.secondary:hover { background: #d4eade; }
+    a:focus-visible { outline: 3px solid #915f17; outline-offset: 4px; }
+    .lexifort { border-color: #e8dcc3; }
+    .lexifort .app-icon { background: #fbefcf; }
+    .lexifort h2 { color: #224738; }
+    .lexifort .app-tagline { color: #805d22; }
+    .lexifort .button.secondary { background: #fbefcf; color: #77531a; }
+    .lexifort .button.secondary:hover { background: #f4e2b1; }
+    .coming-soon { color: #52635f; background: #f0f3f1; }
+    footer { margin-top: 30px; color: #526d68; font-size: 14px; line-height: 1.8; }
+    footer a { color: #2f6f62; text-underline-offset: 3px; overflow-wrap: anywhere; }
+    footer p { margin: 8px 0 0; }
+    @media (max-width: 700px) {
+      body { padding: 36px 18px; }
+      .brand { font-size: 32px; }
+      .apps { grid-template-columns: 1fr; }
+      .app-card { padding: 28px 22px; }
     }
   </style>
 </head>
 <body>
   <main class="container">
-    <div class="brand">Po's AppStudio</div>
-    <div class="subtitle">Sade, kullanışlı ve günlük hayata dokunan uygulamalar.</div>
+    <header>
+      <h1 class="brand">Po's AppStudio</h1>
+      <p class="subtitle">Günlük hayata dokunan uygulamalar, keyifle keşfedilen oyunlar.</p>
+    </header>
 
-    <section class="app-card">
-      <div class="app-icon">🏡</div>
-      <h1>YuvamApp</h1>
+    <div class="apps">
+      <section class="app-card" aria-labelledby="yuvam-title">
+        <div class="app-icon" aria-hidden="true">🏡</div>
+        <h2 id="yuvam-title">YuvamApp</h2>
+        <p class="app-tagline">Gününü düzenle, kendine zaman ayır.</p>
+        <p class="description">
+          Ev işleri, günlük görevler ve namaz takibini tek yerde,
+          anlaşılır ve huzurlu bir deneyimle sunan günlük takip uygulaması.
+        </p>
+        <div class="links">
+          <a class="button" href="https://play.google.com/store/apps/details?id=com.posappstudio.yuvamapp">Google Play</a>
+          <a class="button secondary" href="https://posappstudio.github.io/yuvam-privacy/" aria-label="YuvamApp Gizlilik Politikası">Gizlilik Politikası</a>
+        </div>
+      </section>
 
-      <p class="description">
-        Ev işleri, günlük görevler ve namaz takibini tek yerde,
-        anlaşılır ve huzurlu bir deneyimle sunan günlük takip uygulaması.
-      </p>
-
-      <div class="links">
-        <a href="https://play.google.com/store/apps/details?id=com.posappstudio.yuvamapp">
-          Google Play
-        </a>
-
-        <a class="secondary" href="https://posappstudio.github.io/yuvam-privacy/">
-          Gizlilik Politikası
-        </a>
-      </div>
-    </section>
+      <section class="app-card lexifort" aria-labelledby="lexifort-title">
+        <div class="app-icon" aria-hidden="true">🏰</div>
+        <h2 id="lexifort-title">LexiFort: Kelime Köyü</h2>
+        <p class="app-tagline">Lexicon × Fortress · Kelimelerden doğan bir kale.</p>
+        <p class="description">
+          Harfleri birleştir, bulmacaları çöz ve kendi köyünü geliştir.
+          Kazandığın jetonlarla binalarını yükselt, her yeni kelimeyle köyünü büyüt.
+        </p>
+        <div class="links">
+          <span class="coming-soon">Yakında Google Play’de</span>
+          <a class="button secondary" href="https://posappstudio.github.io/lexifort-privacy/" aria-label="LexiFort Gizlilik Politikası">Gizlilik Politikası</a>
+        </div>
+      </section>
+    </div>
 
     <footer>
-      İletişim:
-      <a href="mailto:posappstudio@gmail.com">posappstudio@gmail.com</a>
-      <br><br>
-      © 2026 Po AppStudio
+      İletişim: <a href="mailto:posappstudio@gmail.com">posappstudio@gmail.com</a>
+      <p>© 2026 Po's AppStudio</p>
     </footer>
   </main>
 </body>
